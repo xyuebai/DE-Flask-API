@@ -10,12 +10,16 @@ This project contains 2 parts, the first part is data preprocessing and the seco
  
     .
     ├── data_transformation                   # Task I & II
-    │   ├── __init.py__     
-    │   ├── log             # folder to save log file   
-    │   ├── data_exploration.ipynb              # Data exploration with Jupyter Notebook
-    │   ├── test_transformation.py             # Unit test for methods
-    │   ├── data_toolkit.py             # Apply data transformation
-    │   └── transformation.py            # Data transformation entry
+    │   ├── src
+    │   │   ├── __init.py__     
+    │   │   ├── data_toolkit.py             # Apply data transformation
+    │   │   └── transformation.py            # Data transformation entry
+    │   ├── test
+    │   │   └── test_transfromation.py            # Unit test
+    │   ├── 
+    │   └── data_exploration.ipynb              # Data exploration with Jupyter Notebook
+    │   
+    │   
     ├── flask_api
     │   ├── app
     │   │   ├── app.py            # api entry point
@@ -24,6 +28,7 @@ This project contains 2 parts, the first part is data preprocessing and the seco
     │   │       └── resrouce.py         # api endpoints
     │   └── test       
     ├── output      # output folder to save the result
+    ├── log      # output folder to save the log
     ├── .gitignore 
     ├── requirements.txt 
     └── readme.md
@@ -31,7 +36,7 @@ This project contains 2 parts, the first part is data preprocessing and the seco
 
 ## How to run
 ```
-$ cd utopia_interview       # project root directory
+$ cd <git-repo-dir>      # project root directory
 $ python3 -m venv <venv-name>
 $ source <venv-name>/bin/activate
 $ pip install -r requirements.txt
@@ -39,15 +44,22 @@ $ pip install -r requirements.txt
 
 ### 1. Data Preprocessing
 ```
-$ cd data_transformation        # from root directory 
+$ export PYTHONPATH="{PYTHONPATH}:<git-repo-dir>/data_transformation"
+$ cd data_transformation/src        # from root directory 
 $ python transformation.py      # run data transformation 
+```
+
+### 1. Data Preprocessing - Unit Test
+```
+$ export PYTHONPATH="{PYTHONPATH}:<git-repo-dir>/data_transformation"
+$ cd data_transformation/test        # from root directory 
 $ python test_transformation.py     # run unit test 
 ```
 
 ### 2. Flask API
 ```
 $ cd flask_api/app       # from root directory
-$ python app.py       # run flask api
+$ python app.py       # start flask api service
 
 ```
 ## API Definition

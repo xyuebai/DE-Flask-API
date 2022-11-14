@@ -10,7 +10,7 @@ file_palylisttracks = "playlist_tracks.csv"
 file_log = "data_transformation.log"
 
 
-LOG_DIR = "./log/"
+LOG_DIR = DataTransformation.LOG_DIR
 if not os.path.exists(LOG_DIR):
     os.makedirs(LOG_DIR)
 

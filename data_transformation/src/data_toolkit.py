@@ -7,13 +7,14 @@ from configparser import ConfigParser
 class DataTransformation:
 
     config_object = ConfigParser()
-    config_object.read("../config.ini")
+    config_object.read("../../config.ini")
 
     # Get environemnt parameters
     config = config_object["SETTINGS"]
     NORMALIZATION_MAX = int(config["normalization_max"])
     INPUT_DIR = config["data_input"]
     OUTPUT_DIR = config["data_output"]
+    LOG_DIR = config["log_output"]
 
     def __init__(self, df) -> None:
         self.df = df
