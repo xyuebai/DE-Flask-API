@@ -6,7 +6,7 @@ import json
 
 config_object = ConfigParser()
 config_object.read("../../config.ini")
-config = config_object["ENV-VAR"]
+config = config_object["SETTINGS"]
 NORMALIZATION_MAX = int(config["normalization_max"])
 
 df_playlist = pd.read_csv("../../output/playlists_normalized_id.csv", sep= ";")

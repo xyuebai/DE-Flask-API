@@ -3,3 +3,6 @@
 
 .DS_store
 __pycache__
+
+log
+*.log
