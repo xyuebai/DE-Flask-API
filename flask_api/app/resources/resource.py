@@ -1,5 +1,5 @@
-from flask_restful import Resource, Api
-from flask import Flask, request, abort, jsonify
+from flask_restful import Resource
+from flask import abort
 from configparser import ConfigParser
 import pandas as pd
 import json
