@@ -71,9 +71,9 @@ Route  | Verb | info
 
 ### 1. Query max_value
 `curl http://localhost:5050/max_value`
-### 1. Query playlists
+### 2. Query playlists
 `curl http://localhost:5050/playlist/<playlist_id>`
-### 1. Query tracklists
+### 3. Query tracklists
 `curl http://localhost:5050/tracklist/<playlist_id>`
 
 
