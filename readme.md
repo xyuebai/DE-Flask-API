@@ -28,7 +28,6 @@ This project contains 2 parts, the first part is data preprocessing and the seco
     ├── log      # output folder to save the log
     ├── .gitignore 
     ├── requirements.txt 
-    ├── requirements.txt 
     └── readme.md
 
 
