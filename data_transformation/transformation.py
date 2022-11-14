@@ -39,26 +39,25 @@ def play_tracks_summary(df):
 
     tracks_summary_dict["no_unique_playlists"] = len(pd.unique(df["playlist_id"]))
 
-    print("Total number of playlists:", 
+    logging.warning("Total number of playlists: %s", 
           str(tracks_summary_dict["no_unique_playlists"]))
 
     tracks_summary_dict["no_unique_tracks"] = len(pd.unique(df["track_id"]))
-    print("Total number of unique tracks:", 
+    logging.warning("Total number of unique tracks: %s", 
           str(tracks_summary_dict["no_unique_tracks"]))
 
     tracks_summary_dict["min_tracks"] = df.groupby(
         ['playlist_id'])['playlist_id'].count().min()
-    print("Minimum number of tracks of all playlists",
+    logging.warning("Minimum number of tracks of all playlists: %s",
           str(tracks_summary_dict["min_tracks"]))
 
     tracks_summary_dict["avg_tracks"] = df.groupby(
         ['playlist_id'])['playlist_id'].count().mean()
-    print("Average number of tracks of all playlists",
-          str(tracks_summary_dict["avg_tracks"]))
+    logging.warning("Average number of tracks of all playlists: %s", str(tracks_summary_dict["avg_tracks"]))
 
     tracks_summary_dict["max_tracks"] = df.groupby(
         ['playlist_id'])['playlist_id'].count().max()
-    print("Maximum number of tracks of all playlists",
+    logging.warning("Maximum number of tracks of all playlists: %s",
           str(tracks_summary_dict["max_tracks"]))
     
     tracks_summary_json = json.dumps(tracks_summary_dict, cls=NpEncoder)

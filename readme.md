@@ -1,7 +1,7 @@
 # Utopia Candidate Test Project
 ## Project Descscription
 
-This project contains 2 parts, frist part is data preprocessing and the second part is flask api. Let's have a look of the repository dictionary arrangment
+This project contains 2 parts, the first part is data preprocessing and the second part is a flask API. Data preprocessing read CSV files run data transformation and analytics and finally saves the result in CSV files. Flask API provides endpoints to the preprocessed data
 
 ## Prerequest
 - Python==3.9.7
@@ -10,10 +10,12 @@ This project contains 2 parts, frist part is data preprocessing and the second p
  
     .
     ├── data_transformation                   # Task I & II
-    │   ├── __init.py__             
+    │   ├── __init.py__     
+    │   ├── log             # folder to save log file   
     │   ├── data_exploration.ipynb              # Data exploration with Jupyter Notebook
     │   ├── test_transformation.py             # Unit test for methods
-    │   └── transformation.py            # Data transformation for task I & II
+    │   ├── data_toolkit.py             # Apply data transformation
+    │   └── transformation.py            # Data transformation entry
     ├── flask_api
     │   ├── app
     │   │   ├── app.py            # api entry point
@@ -53,16 +55,16 @@ $ python app.py       # run flask api
 Route  | Verb | info
 ---------|----------|---------
  max_value | GET | return the value set in variable NORMALIZATION_MAX
- playlist/<playlist_id> | GET | display all elements of the playlist specified by playlist_id
- tracklist/<playlist_id> | GET | return a list of track_ids associated with the playlist 
+ playlist/<playlist_id> | GET | display all elements of the playlist specified by playlist_id, if playlist_id doesn't exist, return 404
+ tracklist/<playlist_id> | GET | return a list of track_ids associated with the playlist, if playlist_id doesn't exist, return 404
 
 ## API Example endpoint
 
 ### 1. Query max_value
 `curl http://localhost:5050/max_value`
-### 1. Query max_value
+### 1. Query playlists
 `curl http://localhost:5050/playlist/<playlist_id>`
-### 1. Query max_value
+### 1. Query tracklists
 `curl http://localhost:5050/tracklist/<playlist_id>`
 
 
