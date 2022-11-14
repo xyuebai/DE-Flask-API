@@ -16,10 +16,7 @@ This project contains 2 parts, the first part is data preprocessing and the seco
     │   │   └── transformation.py            # Data transformation entry
     │   ├── test
     │   │   └── test_transfromation.py            # Unit test
-    │   ├── 
     │   └── data_exploration.ipynb              # Data exploration with Jupyter Notebook
-    │   
-    │   
     ├── flask_api
     │   ├── app
     │   │   ├── app.py            # api entry point
@@ -30,6 +27,7 @@ This project contains 2 parts, the first part is data preprocessing and the seco
     ├── output      # output folder to save the result
     ├── log      # output folder to save the log
     ├── .gitignore 
+    ├── requirements.txt 
     ├── requirements.txt 
     └── readme.md
 

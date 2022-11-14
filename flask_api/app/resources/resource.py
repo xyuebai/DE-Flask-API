@@ -14,12 +14,14 @@ df_list_track = pd.read_csv("../../output/list_tracks_join.csv", sep= ";")
 
 class PlayList(Resource):
     def get(self, playlist_id):
+        # query by playlist id 
         result_df = df_playlist[df_playlist["playlist_id"] == playlist_id]
         if result_df.empty:
             abort(404, description="Playlist_id not found")
+        # return playlist info
         result = result_df.to_json(orient='records')
-        parsed = json.loads(result)
-        return parsed[0]
+        response = json.loads(result)[0]
+        return json.dumps(response)
 
 class TrackList(Resource):
     def get(self, playlist_id):
@@ -29,9 +31,11 @@ class TrackList(Resource):
         result = result_df.to_json(orient='records')
         parsed = json.loads(result)
         response = {"playlist_id": playlist_id, "name": parsed[0]["name"], "track_id":[]}
+        # Add track id to lists
         for item in parsed: response["track_id"].append(item["track_id"])
-        return response
+        return json.dumps(response)
 
 class MaxValue(Resource):
     def get(self):
-        return {"max_value": str(NORMALIZATION_MAX)}
+        response = {"max_value": str(NORMALIZATION_MAX)}
+        return json.dumps(response)
