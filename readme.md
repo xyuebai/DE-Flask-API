@@ -1,4 +1,4 @@
-# Utopia Candidate Test Project
+# Data Engineer Project with Flask API
 ## Project Descscription
 
 This project contains 2 parts, the first part is data preprocessing and the second part is a flask API. Data preprocessing read CSV files run data transformation and analytics and finally saves the result in CSV files. Flask API provides endpoints to the preprocessed data
